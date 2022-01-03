@@ -1,0 +1,8 @@
+# geopy
+# geocoder
+pandas
+matplotlib
+folium
+streamlit
+streamlit_folium
+# ipykernel
