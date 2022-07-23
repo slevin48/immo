@@ -28,9 +28,9 @@ def load_data(code_commune):
 
 st.sidebar.title("Enter search parameters")
 
-postcode = st.sidebar.text_input("Code Commune","75116")
+postcode = st.sidebar.text_input("Code Commune","92004")
 st.sidebar.write('''
-(For Paris: enter 750XX, 
+(For Paris: enter 751XX, 
 with XX the arrondissement)
 ''')
 
