@@ -5,6 +5,7 @@ from streamlit_folium import folium_static
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
+import webbrowser
 import immo
 
 import ssl
@@ -28,8 +29,12 @@ def load_data(code_commune):
 
 st.sidebar.title("Enter search parameters")
 
-postcode = st.sidebar.text_input("Code Commune","92004")
-st.sidebar.write('''
+postcode = st.sidebar.text_input("Code Commune","59350")
+expander = st.sidebar.expander("Search 'Code commune' for city")
+city = expander.text_input("Enter city",value="Lille")
+expander.markdown("<a href='https://www.google.com/search?q=code+commune+"+city+"'>https://www.google.com/search?q=code+commune+"+city+"</a>",
+unsafe_allow_html=True)
+expander.write('''
 (For Paris: enter 751XX, 
 with XX the arrondissement)
 ''')
