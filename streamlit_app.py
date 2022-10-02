@@ -18,7 +18,7 @@ def load_data(code_commune):
     url = "https://files.data.gouv.fr/geo-dvf/latest/csv/2021/communes/"+str(code_commune)[:2]+"/"+str(code_commune)+".csv"
     df = pd.read_csv(url)
     df.date_mutation = pd.to_datetime(df.date_mutation).dt.date
-    df = df.dropna(subset=['valeur_fonciere','surface_reelle_bati'])
+    df = df.dropna(subset=['valeur_fonciere','surface_reelle_bati','longitude','latitude'])
     df['prixm2'] = df.valeur_fonciere/df.surface_reelle_bati
     df = df[df.prixm2<10000] 
     df.prixm2 = df.prixm2.astype(int)
