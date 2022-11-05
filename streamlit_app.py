@@ -30,14 +30,14 @@ st.sidebar.title("Enter search parameters")
 
 try:
     query_params = st.experimental_get_query_params()
-    code = query_journal = query_params['code'][0]
+    code = query_params['code'][0]
 
 except:
 #   if no code is passed with the URL
     st.experimental_set_query_params(code="59350")
     query_params = st.experimental_get_query_params()
     query_params = st.experimental_get_query_params()
-    code = query_journal = query_params['code'][0]
+    code = query_params['code'][0]
 
 postcode = st.sidebar.text_input("Code Commune",code)
 expander = st.sidebar.expander("Search 'Code commune' for city")
